@@ -76,7 +76,7 @@ func ResetDb(root, rootPasswd string) {
 	defer c.Disconnect(ctx)
 	db := c.Database(db_name)
 	db.Drop(ctx)
-	log.Printf("Drop DB[%s] First/n", db_name)
+	log.Printf("Drop DB[%s] First\n", db_name)
 	createIndex(c, STOCK_PRICE_COL, "code", "dateStr")
 	deleteAccount(c)
 	createAccount(c)
